@@ -55,7 +55,7 @@ export class PolarisChip extends LitElement {
     super();
     this.name = '';
     this.link = "https://psu.edu/news/research/";
-    this.imageSrc = "https://img.doutuwang.com/2020/03/20200309721135_vcaPZM.jpg";
+    this.imageSrc = "https://cdn-useast1.kapwing.com/collections/Z0rCB56Hqs-video_image--ksRh0WJQI.jpeg?Expires=1698552010&GoogleAccessId=dev-sa-videoprocessing%40kapwing-dev.iam.gserviceaccount.com&Signature=JkF4xoWTmjdjsIw9OGsiaXzwxYdurIdTeXrkXv3nnFaQ2qzjSSXRZ6cTY4PIBO8ZFx%2FtvHyuJ4AU1De%2FyjjKZ1DphHBgZ9%2B6YkTqMUb5413ON%2FWB5G8yFu3Lg9ZC1PBcJP0waI%2BiMdRmyrS0iwnZv7gax0LaBwA6DdxEhGkKzfF4GTWXopL1plam56dkzldWwYGYZA0qyiB3k4DnqF58%2BPAi7Pqv4luXAuNuIUHno4KxaJUb89Ejpw8SHF7OjNM3TTZeJ1tE6XDtJB%2FYmZqrlT74i7%2Fsq2H9oG73GLmQJ4nHr5xmI6tGHLZ0LxJMEQEDFX8%2BXogha1bx3opa7OT%2Fpg%3D%3D";
   }
 
   render() {
