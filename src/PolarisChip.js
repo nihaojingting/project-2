@@ -19,10 +19,10 @@ export class PolarisChip extends LitElement {
       }
 
       .cardcontainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
 
       .image-link hover{
         background-color: #0099da !important;
