@@ -24,7 +24,7 @@ export class PolarisChip extends LitElement {
   
       a.chip:hover img {
         border: 2px solid #0099da; /* Border color on hover */
-        #p3 {background-color:rgba(0,0,255,0.3);} /* blue with opacity */
+        background-color:rgba(0,0,255,0.3); /* blue with opacity */
       }
   
       a.chip {
