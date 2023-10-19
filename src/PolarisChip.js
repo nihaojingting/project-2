@@ -18,6 +18,16 @@ export class PolarisChip extends LitElement {
 
       }
 
+      .image-link {
+        display: block;
+        cursor: pointer;
+      }
+
+      .image-link img {
+        max-width: 100%;
+        height: auto;
+      }
+      
       .link:focus,
       .link:hover,
       :host([active]) .link{
@@ -45,9 +55,15 @@ export class PolarisChip extends LitElement {
     super();
     this.name = '';
     this.link = "https://psu.edu/news/research/";
+    this.imageSrc = "https://img.doutuwang.com/2020/03/20200309721135_vcaPZM.jpg";
   }
 
   render() {
-    return html`<a class="link" href="${this.link}"><slot>${this.name}</slot></a>`;
+    return html`
+      <a class="chip" href="${this.link}" target="_blank">
+        <img src="${this.imageSrc}" alt="${this.name}">
+        <slot>${this.name}</slot>
+      </a>
+    `;
   }
 }
