@@ -20,13 +20,14 @@ export class PolarisChip extends LitElement {
         max-width: 100%;
         height: auto;
         border: 2px solid #444; /* Default border color */
+        transition: filter 0.3s; /* Add a smooth transition */
       }
-  
+
       a.chip:hover img {
         border: 2px solid #0099da; /* Border color on hover */
-        background-color:rgba(0,0,255,0.3); /* blue with opacity */
+        filter: brightness(1.2) sepia(1) hue-rotate(180deg); /* Apply a blue filter */
       }
-  
+
       a.chip {
         display: block;
         cursor: pointer;
@@ -42,7 +43,7 @@ export class PolarisChip extends LitElement {
         cursor: pointer;
         text-decoration: underline;
       }
-  
+
       a.chip {
         font-weight: bold;
         text-decoration: none;
