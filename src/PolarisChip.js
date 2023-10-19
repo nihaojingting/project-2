@@ -16,13 +16,14 @@ export class PolarisChip extends LitElement {
         margin: 0 12px 12px 0;
       }
   
-      a.chip:hover {
-        background-color: #0099da !important;
-      }
-  
       a.chip img {
         max-width: 100%;
         height: auto;
+        border: 2px solid #444; /* Default border color */
+      }
+  
+      a.chip:hover img {
+        border: 2px solid #0099da; /* Border color on hover */
       }
   
       a.chip {
@@ -51,6 +52,7 @@ export class PolarisChip extends LitElement {
       }
     `;
   }
+  
   
 
   constructor() {
