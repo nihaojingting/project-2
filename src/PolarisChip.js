@@ -13,35 +13,26 @@ export class PolarisChip extends LitElement {
     return css`
       :host {
         display: inline-block;
-        /* up,down,right,left */
         margin: 0 12px 12px 0;
-
       }
-
-      .cardcontainer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-
-      .image-link hover{
+  
+      a.chip:hover {
         background-color: #0099da !important;
       }
-
-      .image-link img {
+  
+      a.chip img {
         max-width: 100%;
         height: auto;
       }
-      
-      .image-link hover{
+  
+      a.chip {
         display: block;
         cursor: pointer;
       }
-
-
-      .link:focus,
-      .link:hover,
-      :host([active]) .link{
+  
+      a.chip:focus,
+      a.chip:hover,
+      :host([active]) a.chip {
         background-color: #e4e5e7;
         border: 2px solid #e4e5e7;
         border-radius: 2px;
@@ -49,18 +40,18 @@ export class PolarisChip extends LitElement {
         cursor: pointer;
         text-decoration: underline;
       }
-
-      .link {
+  
+      a.chip {
         font-weight: bold;
         text-decoration: none;
-        /* top/bottom & sides */
         padding: 8px 4px;
         border: 2px solid #444;
         color: #444;
-        font-size: 16px
+        font-size: 16px;
       }
     `;
   }
+  
 
   constructor() {
     super();
