@@ -18,9 +18,8 @@ export class PolarisChip extends LitElement {
 
       }
 
-      .image-link {
-        display: block;
-        cursor: pointer;
+      .image-link hover{
+        background-color: #0099da !important;
       }
 
       .image-link img {
@@ -28,6 +27,12 @@ export class PolarisChip extends LitElement {
         height: auto;
       }
       
+      .image-link hover{
+        display: block;
+        cursor: pointer;
+      }
+
+
       .link:focus,
       .link:hover,
       :host([active]) .link{
