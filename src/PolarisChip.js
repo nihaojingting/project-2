@@ -5,7 +5,7 @@ export class PolarisChip extends LitElement {
     return {
       name: { type: String },
       link: { type: String },
-      active: { type: Boolean, reflect: true}
+      active: { type: Boolean, reflect: true },
     };
   }
 
@@ -15,7 +15,7 @@ export class PolarisChip extends LitElement {
         display: inline-block;
         margin: 0 12px 12px 0;
       }
-  
+
       a.chip img {
         max-width: 100%;
         height: auto;
@@ -28,11 +28,21 @@ export class PolarisChip extends LitElement {
         filter: brightness(1.2) sepia(1) hue-rotate(180deg); /* Apply a blue filter */
       }
 
+      a.chip img {
+        /* Set the width and height of the image */
+        /* width: 900px;
+        height: 400px; */
+        max-width: 100%;
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+
       a.chip {
         display: block;
         cursor: pointer;
       }
-  
+
       a.chip:focus,
       a.chip:hover,
       :host([active]) a.chip {
@@ -54,14 +64,13 @@ export class PolarisChip extends LitElement {
       }
     `;
   }
-  
-  
 
   constructor() {
     super();
     this.name = '';
-    this.link = "https://psu.edu/news/research/";
-    this.imageSrc = "https://cdn-useast1.kapwing.com/collections/Z0rCB56Hqs-video_image--ksRh0WJQI.jpeg?Expires=1698552010&GoogleAccessId=dev-sa-videoprocessing%40kapwing-dev.iam.gserviceaccount.com&Signature=JkF4xoWTmjdjsIw9OGsiaXzwxYdurIdTeXrkXv3nnFaQ2qzjSSXRZ6cTY4PIBO8ZFx%2FtvHyuJ4AU1De%2FyjjKZ1DphHBgZ9%2B6YkTqMUb5413ON%2FWB5G8yFu3Lg9ZC1PBcJP0waI%2BiMdRmyrS0iwnZv7gax0LaBwA6DdxEhGkKzfF4GTWXopL1plam56dkzldWwYGYZA0qyiB3k4DnqF58%2BPAi7Pqv4luXAuNuIUHno4KxaJUb89Ejpw8SHF7OjNM3TTZeJ1tE6XDtJB%2FYmZqrlT74i7%2Fsq2H9oG73GLmQJ4nHr5xmI6tGHLZ0LxJMEQEDFX8%2BXogha1bx3opa7OT%2Fpg%3D%3D";
+    this.link = 'https://psu.edu/news/research/';
+    this.imageSrc =
+      'https://hr.psu.edu/sites/hr/files/styles/article_home_page/public/2023-10/ExpandedFamilySick_0.jpg?h=5265ff56&itok=e9egM1X8';
   }
 
   render() {
