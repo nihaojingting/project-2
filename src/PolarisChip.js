@@ -46,7 +46,7 @@ export class PolarisChip extends LitElement {
       a.chip {
         font-weight: bold;
         text-decoration: none;
-        padding: 2px 2px;
+        padding: 0px 0px;
         font-size: 16px;
       }
 
