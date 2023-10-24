@@ -69,8 +69,7 @@ export class PolarisChip extends LitElement {
     super();
     this.name = '';
     this.link = 'https://psu.edu/news/research/';
-    this.imageSrc =
-      'https://hr.psu.edu/sites/hr/files/styles/article_home_page/public/2023-10/ExpandedFamilySick_0.jpg?h=5265ff56&itok=e9egM1X8';
+    this.imageSrc ='';
   }
 
   render() {
