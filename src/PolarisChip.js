@@ -53,8 +53,13 @@ export class PolarisChip extends LitElement {
         color: #444;
         font-size: 16px;
       }
+
+      .chip-container {
+        display: flex; /* Use Flexbox to make cards sit horizontally */
+      }
     `;
   }
+
   constructor() {
     super();
     this.name = '';
@@ -64,10 +69,12 @@ export class PolarisChip extends LitElement {
 
   render() {
     return html`
-      <a class="chip" href="${this.link}" target="_blank">
-        <img src="${this.imageSrc}" alt="${this.name}">
-        <slot>${this.name}</slot>
-      </a>
+      <div class="chip-container">
+        <a class="chip" href="${this.link}" target="_blank">
+          <img src="${this.imageSrc}" alt="${this.name}">
+          <slot>${this.name}</slot>
+        </a>
+      </div>
     `;
   }
 }
