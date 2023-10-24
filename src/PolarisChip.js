@@ -18,7 +18,7 @@ export class PolarisChip extends LitElement {
       }
 
       a.chip img {
-        max-width: 300px; /* Set a fixed maximum width for the images */
+        max-width: 300px;
         height: auto;
         border: 2px solid #444;
         transition: filter 0.3s;
@@ -54,18 +54,21 @@ export class PolarisChip extends LitElement {
         font-size: 16px;
       }
 
-      .chip-container {
+      .cardcontainer {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: 100vh; /* Make the container cover the full viewport height */
       }
 
       a.chip img {
-        max-width: 300px; /* Ensure images fit within their containers */
+        max-width: 300px;
         height: auto;
       }
 
       @media (max-width: 768px) {
-        .chip-container {
+        .cardcontainer {
           flex-direction: column;
         }
       }
@@ -75,13 +78,13 @@ export class PolarisChip extends LitElement {
   constructor() {
     super();
     this.name = '';
-    this .link = '';
+    this.link = '';
     this.imageSrc = '';
   }
 
   render() {
     return html`
-      <div class="chip-container">
+      <div class="cardcontainer">
         <a class="chip" href="${this.link}" target="_blank">
           <img src="${this.imageSrc}" alt="${this.name}">
           <slot>${this.name}</slot>
