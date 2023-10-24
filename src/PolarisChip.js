@@ -21,6 +21,7 @@ export class PolarisChip extends LitElement {
         position: relative;
         display: block;
         cursor: pointer;
+        padding: 2px
       }
 
       a.chip::before {
