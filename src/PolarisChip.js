@@ -39,8 +39,7 @@ export class PolarisChip extends LitElement {
       }
 
       a.chip img {
-        display: block;
-        max-width: 100%;
+        max-width: 300px;
         height: auto;
       }
 
