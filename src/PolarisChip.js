@@ -6,6 +6,7 @@ export class PolarisChip extends LitElement {
       name: { type: String },
       link: { type: String },
       active: { type: Boolean, reflect: true },
+      imageSrc: { type: String }, // Define imageSrc as a property
     };
   }
 
@@ -64,7 +65,6 @@ export class PolarisChip extends LitElement {
       }
     `;
   }
-
   constructor() {
     super();
     this.name = '';
