@@ -30,7 +30,7 @@ export class PolarisChip extends LitElement {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(	30, 64, 124, 0.35); /* Navy blue with 35% opacity */
+        background-color: rgba(30, 64, 124, 0.35); /* Navy blue with 35% opacity */
         opacity: 0; /* Initially transparent */
       }
 
@@ -55,6 +55,7 @@ export class PolarisChip extends LitElement {
         flex-wrap: wrap;
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
+        padding: 16px; /* Add padding around the card container */
       }
 
       @media (max-width: 768px) {
