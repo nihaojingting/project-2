@@ -20,12 +20,10 @@ export class PolarisChip extends LitElement {
       a.chip img {
         max-width: 300px;
         height: auto;
-        transition: filter 0.3s;
-        aspect-ratio: auto 900 / 400;
+        transition: filter 0.0s;
       }
 
       a.chip:hover img {
-        border: 2px solid #0099da;
         filter: brightness(1.2) sepia(1) hue-rotate(180deg);
       }
 
