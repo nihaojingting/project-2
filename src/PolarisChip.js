@@ -22,6 +22,8 @@ export class PolarisChip extends LitElement {
         height: auto;
         border: 2px solid #444; /* Default border color */
         transition: filter 0.3s; /* Add a smooth transition */
+        width: 900px;
+        height: 400px;
       }
 
       a.chip:hover img {
