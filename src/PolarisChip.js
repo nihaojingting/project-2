@@ -6,7 +6,7 @@ export class PolarisChip extends LitElement {
       name: { type: String },
       link: { type: String },
       active: { type: Boolean, reflect: true },
-      imageSrc: { type: String }, // Define imageSrc as a property
+      imageSrc: { type: String },
     };
   }
 
@@ -20,13 +20,13 @@ export class PolarisChip extends LitElement {
       a.chip img {
         max-width: 100%;
         height: auto;
-        border: 2px solid #444; /* Default border color */
-        transition: filter 0.3s; /* Add a smooth transition */
+        border: 2px solid #444;
+        transition: filter 0.3s;
       }
 
       a.chip:hover img {
-        border: 2px solid #0099da; /* Border color on hover */
-        filter: brightness(1.2) sepia(1) hue-rotate(180deg); /* Apply a blue filter */
+        border: 2px solid #0099da;
+        filter: brightness(1.2) sepia(1) hue-rotate(180deg);
       }
 
       a.chip {
@@ -55,7 +55,14 @@ export class PolarisChip extends LitElement {
       }
 
       .chip-container {
-        display: flex; /* Use Flexbox to make cards sit horizontally */
+        display: flex;
+        flex-wrap: wrap; /* Allow cards to wrap to the next row */
+      }
+
+      @media (max-width: 768px) {
+        .chip-container {
+          flex-direction: column; /* Switch to vertical layout on smaller screens */
+        }
       }
     `;
   }
