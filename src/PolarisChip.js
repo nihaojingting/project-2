@@ -146,14 +146,14 @@ export class PolarisChip extends LitElement {
     `;
   }
 
-  render() {
-    this.dateToMonth();
-    this.dateToDay();
-    return html`
-    <div class="container">
-      <span class="month">${this.month}</span>
-      <span class="day">${this.day}</span>
-    </div>
-    `;
-  }
+  // render() {
+  //   this.dateToMonth();
+  //   this.dateToDay();
+  //   return html`
+  //   <div class="container">
+  //     <span class="month">${this.month}</span>
+  //     <span class="day">${this.day}</span>
+  //   </div>
+  //   `;
+  // }
 }
