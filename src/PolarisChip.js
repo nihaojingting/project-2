@@ -17,29 +17,30 @@ export class PolarisChip extends LitElement {
         margin: 0 12px 12px 0;
       }
 
-      a.chip img {
-        max-width: 300px;
-        height: auto;
-      }
-
-      a.chip:hover img {
-        filter: hue-rotate(180deg); /* Navy blue hue without changing brightness and saturation */
-      }
-
-
-
       a.chip {
+        position: relative;
         display: block;
         cursor: pointer;
       }
 
-      a.chip:focus,
-      a.chip:hover,
-      :host([active]) a.chip {
-        background-color: #e4e5e7;
-        color: #005fa9;
-        cursor: pointer;
-        text-decoration: underline;
+      a.chip::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 255, 0.5); /* Navy blue with 50% opacity */
+        opacity: 0; /* Initially transparent */
+      }
+
+      a.chip:hover::before {
+        opacity: 1; /* Make the overlay fully visible on hover */
+      }
+
+      a.chip img {
+        max-width: 300px;
+        height: auto;
       }
 
       a.chip {
@@ -54,12 +55,6 @@ export class PolarisChip extends LitElement {
         flex-wrap: wrap;
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
-        /* height: 100vh; Make the container cover the full viewport height */
-      }
-
-      a.chip img {
-        max-width: 300px;
-        height: auto;
       }
 
       @media (max-width: 768px) {
