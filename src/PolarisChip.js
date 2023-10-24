@@ -38,6 +38,8 @@ export class PolarisChip extends LitElement {
       a.chip:hover,
       :host([active]) a.chip {
         background-color: #e4e5e7;
+        border: 2px solid #e4e5e7;
+        border-radius: 2px;
         color: #005fa9;
         cursor: pointer;
         text-decoration: underline;
@@ -47,7 +49,6 @@ export class PolarisChip extends LitElement {
         font-weight: bold;
         text-decoration: none;
         padding: 8px 4px;
-        border: 2px solid #444;
         color: #444;
         font-size: 16px;
       }
