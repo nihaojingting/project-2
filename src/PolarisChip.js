@@ -75,7 +75,7 @@ export class PolarisChip extends LitElement {
   constructor() {
     super();
     this.name = '';
-    this link = '';
+    this .link = '';
     this.imageSrc = '';
   }
 
