@@ -30,7 +30,7 @@ export class PolarisChip extends LitElement {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(blue, 0.4); /* Navy blue with 40% opacity */
+        background-color: rgba(0, 0, 255, 0.4); /* Navy blue with 50% opacity */
         opacity: 0; /* Initially transparent */
       }
 
