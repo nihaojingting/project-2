@@ -20,7 +20,6 @@ export class PolarisChip extends LitElement {
       a.chip img {
         max-width: 300px;
         height: auto;
-        border: 2px solid #444;
         transition: filter 0.3s;
       }
 
