@@ -136,24 +136,22 @@ export class PolarisChip extends LitElement {
   }
 
   render() {
+    this.dateToMonth();
+    this.dateToDay();
+    
     return html`
-      <div class="cardcontainer">
-        <a class="chip" href="${this.link}" target="_blank">
-          <img src="${this.imageSrc}" alt="${this.name}">
-          <slot>${this.name}</slot>
-        </a>
+      <div class="container">
+        <div class="cardcontainer">
+          <a class="chip" href="${this.link}" target="_blank">
+            <img src="${this.imageSrc}" alt="${this.name}">
+            <slot>${this.name}</slot>
+          </a>
+        </div>
+        <div class="container">
+          <span class="month">${this.month}</span>
+          <span class="day">${this.day}</span>
+        </div>
       </div>
     `;
   }
-
-  // render() {
-  //   this.dateToMonth();
-  //   this.dateToDay();
-  //   return html`
-  //   <div class="container">
-  //     <span class="month">${this.month}</span>
-  //     <span class="day">${this.day}</span>
-  //   </div>
-  //   `;
-  // }
-}
+}  
