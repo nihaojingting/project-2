@@ -18,7 +18,7 @@ export class PolarisChip extends LitElement {
       }
 
       a.chip img {
-        max-width: 100%;
+        max-width: 300px; /* Set a fixed maximum width for the images */
         height: auto;
         border: 2px solid #444;
         transition: filter 0.3s;
@@ -56,12 +56,17 @@ export class PolarisChip extends LitElement {
 
       .chip-container {
         display: flex;
-        flex-wrap: wrap; /* Allow cards to wrap to the next row */
+        flex-wrap: wrap;
+      }
+
+      a.chip img {
+        max-width: 300px; /* Ensure images fit within their containers */
+        height: auto;
       }
 
       @media (max-width: 768px) {
         .chip-container {
-          flex-direction: column; /* Switch to vertical layout on smaller screens */
+          flex-direction: column;
         }
       }
     `;
@@ -70,7 +75,7 @@ export class PolarisChip extends LitElement {
   constructor() {
     super();
     this.name = '';
-    this.link = '';
+    this link = '';
     this.imageSrc = '';
   }
 
