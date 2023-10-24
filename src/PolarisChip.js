@@ -30,7 +30,7 @@ export class PolarisChip extends LitElement {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(	30, 64, 124, 0.35); /* Navy blue with 35% opacity */
+        background-color: rgba(30, 64, 124, 0.35); /* Navy blue with 35% opacity */
         opacity: 0; /* Initially transparent */
       }
 
@@ -39,14 +39,26 @@ export class PolarisChip extends LitElement {
       }
 
       a.chip img {
-        max-width: 300px;
-        height: auto;
+        max-width: 100%; /* Set the maximum width to 100% of the container */
+        height: auto; /* Maintain the aspect ratio */
+      }
+
+      @media (min-width: 768px) {
+        a.chip img {
+          max-width: 900px; /* Set a maximum width of 900px when the screen width is at least 768px */
+        }
+      }
+
+      @media (max-width: 767px) {
+        a.chip img {
+          max-width: 100%; /* Set the maximum width to 100% when the screen width is less than 768px */
+        }
       }
 
       a.chip {
         font-weight: bold;
         text-decoration: none;
-        padding: 0px 0px;
+        padding: 0;
         font-size: 16px;
       }
 
