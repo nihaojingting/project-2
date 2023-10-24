@@ -29,16 +29,6 @@ export class PolarisChip extends LitElement {
         filter: brightness(1.2) sepia(1) hue-rotate(180deg); /* Apply a blue filter */
       }
 
-      a.chip img {
-        /* Set the width and height of the image */
-        /* width: 900px;
-        height: 400px; */
-        max-width: 100%;
-        display: block;
-        height: auto;
-        width: 100%;
-      }
-
       a.chip {
         display: block;
         cursor: pointer;
@@ -68,8 +58,8 @@ export class PolarisChip extends LitElement {
   constructor() {
     super();
     this.name = '';
-    this.link = 'https://psu.edu/news/research/';
-    this.imageSrc ='';
+    this.link = '';
+    this.imageSrc = '';
   }
 
   render() {
