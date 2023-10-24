@@ -21,6 +21,7 @@ export class PolarisChip extends LitElement {
         max-width: 300px;
         height: auto;
         transition: filter 0.3s;
+        aspect-ratio: auto 900 / 400;
       }
 
       a.chip:hover img {
