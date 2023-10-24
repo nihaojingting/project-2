@@ -23,8 +23,9 @@ export class PolarisChip extends LitElement {
       }
 
       a.chip:hover img {
-  filter: brightness(1.2) sepia(1) hue-rotate(180deg); /* Navy blue hue */
-}
+        filter: hue-rotate(180deg); /* Navy blue hue without changing brightness and saturation */
+      }
+
 
 
       a.chip {
