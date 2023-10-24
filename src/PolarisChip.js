@@ -57,7 +57,7 @@ export class PolarisChip extends LitElement {
       .cardcontainer {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; /* Center horizontally */
+        /* justify-content: center; Center horizontally */
         align-items: center; /* Center vertically */
         height: 100vh; /* Make the container cover the full viewport height */
       }
