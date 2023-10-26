@@ -21,9 +21,11 @@ export class PolarisChip extends LitElement {
       }
 
       a.chip {
-        position: relative;
-        display: block;
         cursor: pointer;
+        display: flex;
+        flex-direction: horizontal;
+        align-items: center;
+        margin: 2em;
       }
 
       a.chip::before {
@@ -35,6 +37,7 @@ export class PolarisChip extends LitElement {
         height: 100%;
         background-color: rgba(30, 64, 124, 0.35); /* Navy blue with 35% opacity */
         opacity: 0; /* Initially transparent */
+  
       }
 
       a.chip:hover::before {
@@ -139,6 +142,8 @@ export class PolarisChip extends LitElement {
     this.dateToMonth();
     this.dateToDay();
     
+
+    /* change all css from .a to container */
     return html`
       <div class="container">
         <div class="cardcontainer">
