@@ -1,217 +1,83 @@
 import { LitElement, html, css } from 'lit';
 
- 
-
 export class DateChip extends LitElement {
-
- 
-
   static get properties() {
-
- 
-
     return {
-
       date: { type: String },
-
       month: { type: String },
-
       day: { type: Number }
-
     };
-
   }
-
- 
 
   static get styles() {
-
- 
-
     return css`
-
- 
-
       :host {
-
         display: block;
-
       }
-
- 
-
       .container {
-
         display: flex;
-
         flex-direction: column;
-
-        float: left;
-
         box-sizing: border-box;
-
         font-family: 'Roboto', sans-serif;
-
         width: 100%;
-
         height: 100%;
-
-        margin-right: 10px;
-
-        margin-top: 0em;
-
-        margin-left: -6px;
-
+        margin: 0 10px -6px 0;
         line-height: 24px;
-
         text-align: center;
-
       }
-
- 
-
+      .month, .day {
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: auto;
+        border-radius: 0 0 2px 2px;
+        padding: 2px 10px;
+      }
       .month {
-
         background-color: #1E407C;
-
-        background-clip: border-box;
-
-        background-origin: padding-box;
-
-        background-size: auto;
-
-        border-bottom-left-radius: 2px;
-
-        border-bottom-right-radius: 2px;
-
-        border-top-left-radius: 0px;
-
-        border-top-right-radius: 0px;
-
         color: white;
-
         font-size: 14px;
-
         font-weight: 700;
-
         line-height: 23.04px;
-
-        padding-left: 10px;
-
-        padding-right: 10px;
-
-        padding-top: 2px;
-
-        padding-bottom: 1px;
-
         text-transform: uppercase;
-
       }
-
- 
-
       .day {
-
         background-color: #f3f3f3;
-
-        background-clip: border-box;
-
-        background-origin: padding-box;
-
-        background-size: auto;
-
-        border-bottom-left-radius: 2px;
-
-        border-bottom-right-radius: 2px;
-
-        border-top-left-radius: 0px;
-
-        border-top-right-radius: 0px;
-
         color: #444444;
-
         font-size: 18px;
-
         font-weight: 900;
-
         line-height: 27px;
-
-        padding-left: 20px;
-
-        padding-right: 20px;
-
-        padding-top: 10px;
-
-        padding-bottom: 10px;
-
+        padding: 10px 20px;
       }
-
     `;
-
   }
-
- 
 
   constructor() {
-
     super();
-
     this.date = '01/01/2001'
-
     this.month = 'Jan';
-
     this.day = 1;
-
   }
-
- 
 
   dateToMonth() {
-
-    var inputDate = new Date(this.date);
-
-    this.month = inputDate.toLocaleDateString('en-us', { month:"short" });
-
+    const inputDate = new Date(this.date);
+    this.month = inputDate.toLocaleDateString('en-us', { month: "short" });
   }
-
- 
 
   dateToDay() {
-
-    var inputDate = new Date(this.date);
-
-    this.day = inputDate.toLocaleDateString('en-us', { day:"numeric" });
-
+    const inputDate = new Date(this.date);
+    this.day = inputDate.toLocaleDateString('en-us', { day: "numeric" });
   }
-
- 
 
   render() {
-
- 
-
     this.dateToMonth();
-
     this.dateToDay();
-
     return html`
-
- 
-
-    <div class="container">
-
-      <span class="month">${this.month}</span>
-
-      <span class="day">${this.day}</span>
-
-    </div>
-
+      <div class="container">
+        <span class="month">${this.month}</span>
+        <span class="day">${this.day}</span>
+      </div>
     `;
-
   }
-
 }
-
- 
 
 customElements.define('date-chip', DateChip);
