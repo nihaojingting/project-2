@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import './date-chip.js';
 
 export class PolarisChip extends LitElement {
   static get properties() {
@@ -7,25 +8,38 @@ export class PolarisChip extends LitElement {
       link: { type: String },
       active: { type: Boolean, reflect: true },
       imageSrc: { type: String },
-      date: { type: String },
-      month: { type: String },
-      day: { type: Number }
+      header: { type: String },
+      desc: { type: String },
     };
   }
 
   static get styles() {
     return css`
       :host {
-        display: inline-block;
-        margin: 0 12px 12px 0;
+        display: inline-flex;
+        margin: 12px;
+        max-width: 300px;
+        flex-direction: column;
       }
 
-      a.chip {
-        cursor: pointer;
+      .cardcontainer {
         display: flex;
-        flex-direction: horizontal;
-        align-items: center;
-        margin: 2em;
+        flex-direction: column;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        margin-right: 10px;
+        line-height: 24px;
+        align-items: flex-start; /* Add this line */
+}
+
+      a.chip {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 0;
+        font-size: 16px;
       }
 
       a.chip::before {
@@ -35,86 +49,59 @@ export class PolarisChip extends LitElement {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(30, 64, 124, 0.35); /* Navy blue with 35% opacity */
-        opacity: 0; /* Initially transparent */
-  
+        background-color: rgba(30, 64, 124, 0.35); 
+        opacity: 0; 
       }
 
       a.chip:hover::before {
-        opacity: 1; /* Make the overlay fully visible on hover */
+        opacity: 1; 
       }
 
       a.chip img {
-        max-width: 300px;
+        max-width: 100%;
         height: auto;
       }
 
-      a.chip {
-        font-weight: bold;
-        text-decoration: none;
-        padding: 0px 0px;
-        font-size: 16px;
-      }
-
-      .cardcontainer {
+      .imagecontainer {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        padding: 16px; /* Add padding around the card container */
+        justify-content: center; 
+        align-items: center; 
       }
+
+      .headercontainer {
+  display: flex;
+  margin: 20px 0;
+  align-items: flex-start; /* Add this line */
+}
+
+
+      h3 {
+        font-size: 20.8px;
+        text-transform: capitalize;
+      }
+
+      .cardheader {
+        color: rgb(0, 95, 169);
+        text-decoration: none;
+      }
+
+      .descriptioncontainer {
+        padding: 10px;
+      }
+
+      .description {
+        font-size: 19.2px;
+        color: black;
+        display: flex; /* Add this line */
+        align-items: flex-start; /* Add this line */
+      }
+
 
       @media (max-width: 768px) {
         .cardcontainer {
           flex-direction: column;
         }
-      }
-      .container {
-        display: flex;
-        flex-direction: column;
-        float: left;
-        box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
-        margin-right: 10px;
-        line-height: 24px;
-        text-align: center;
-      }
-      .month {
-        background-color: #1E407C;
-        background-clip: border-box;
-        background-origin: padding-box;
-        background-size: auto;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-        color: white;
-        font-size: 12.8px;
-        font-weight: 700;
-        line-height: 23.04px;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 1px;
-        padding-bottom: 1px;
-        text-transform: uppercase;
-      }
-      .day {
-        background-color: white;
-        background-clip: border-box;
-        background-origin: padding-box;
-        background-size: auto;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-        color: #444444;
-        font-size: 18px;
-        font-weight: 900;
-        line-height: 27px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
       }
     `;
   }
@@ -124,39 +111,31 @@ export class PolarisChip extends LitElement {
     this.name = '';
     this.link = '';
     this.imageSrc = '';
-    this.date = '01/01/2001'
-    this.month = 'Jan';
-    this.day = 1;
-  }
-  dateToMonth() {
-    var inputDate = new Date(this.date);
-    this.month = inputDate.toLocaleDateString('en-us', { month:"short" });
-  }
-
-  dateToDay() {
-    var inputDate = new Date(this.date);
-    this.day = inputDate.toLocaleDateString('en-us', { day:"numeric" });
+    this.header = '';
+    this.desc = '';
   }
 
   render() {
-    this.dateToMonth();
-    this.dateToDay();
-    
-
-    /* change all css from .a to container */
     return html`
-      <div class="container">
-        <div class="cardcontainer">
-          <a class="chip" href="${this.link}" target="_blank">
-            <img src="${this.imageSrc}" alt="${this.name}">
-            <slot>${this.name}</slot>
-          </a>
+      <div class="cardcontainer">
+        <a class="chip" href="${this.link}" target="_blank">
+          <img src="${this.imageSrc}" alt="${this.name}" />
+          <slot>${this.name}</slot>
+        </a>
+        <div class="headercontainer">
+          <date-chip></date-chip>
+          <h3>
+            <a class="cardheader" href="${this.link}" target="_blank">
+              <slot>${this.header}</slot>
+            </a>
+          </h3>
         </div>
-        <div class="container">
-          <span class="month">${this.month}</span>
-          <span class="day">${this.day}</span>
+        <div class="descriptioncontainer">
+          <p class="description">
+            <slot>${this.desc}</slot>
+          </p>
         </div>
       </div>
     `;
   }
-}  
+}
